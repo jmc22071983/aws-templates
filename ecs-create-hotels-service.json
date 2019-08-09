@@ -1,0 +1,26 @@
+{
+    "cluster": "ecs-cluster",
+    "serviceName": "config",
+    "taskDefinition": "config:4",
+    "loadBalancers": [
+		{
+			"targetGroupArn": "arn:aws:elasticloadbalancing:eu-west-1:059964340987:targetgroup/config-tg/69582e66190b0fd4",
+			"containerName": "config",
+			"containerPort": 8888
+		}
+    ],
+    "desiredCount": 3,
+    "clientToken": "",
+    "launchType": "EC2",
+    "role": "",
+    "deploymentConfiguration": {
+        "maximumPercent": 200,
+        "minimumHealthyPercent": 100
+    },
+    "healthCheckGracePeriodSeconds": 0,
+    "schedulingStrategy": "REPLICA",
+    "deploymentController": {
+"type": "ECS"
+    },
+    "enableECSManagedTags": false
+}

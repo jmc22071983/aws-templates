@@ -1,0 +1,26 @@
+{
+    "cluster": "ecs-cluster",
+    "serviceName": "eureka",
+    "taskDefinition": "eureka:6",
+    "loadBalancers": [
+		{
+			"targetGroupArn": "arn:aws:elasticloadbalancing:eu-west-1:059964340987:targetgroup/eureka-tg/7b511dce09792b0a",
+			"containerName": "eureka",
+			"containerPort": 8761
+		}
+    ],
+    "desiredCount": 1,
+    "clientToken": "",
+    "launchType": "EC2",
+    "role": "",
+    "deploymentConfiguration": {
+        "maximumPercent": 200,
+        "minimumHealthyPercent": 100
+    },
+    "healthCheckGracePeriodSeconds": 0,
+    "schedulingStrategy": "REPLICA",
+    "deploymentController": {
+"type": "ECS"
+    },
+    "enableECSManagedTags": false
+}

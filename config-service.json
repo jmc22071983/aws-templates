@@ -1,0 +1,75 @@
+{
+    "services": [
+        {
+            "serviceArn": "arn:aws:ecs:eu-west-1:059964340987:service/config",
+            "serviceName": "config",
+            "clusterArn": "arn:aws:ecs:eu-west-1:059964340987:cluster/ecs-cluster",
+            "loadBalancers": [
+                {
+                    "targetGroupArn": "arn:aws:elasticloadbalancing:eu-west-1:059964340987:targetgroup/config-tg/69582e66190b0fd4",
+                    "containerName": "config",
+                    "containerPort": 8888
+                }
+            ],
+            "serviceRegistries": [],
+            "status": "ACTIVE",
+            "desiredCount": 1,
+            "runningCount": 1,
+            "pendingCount": 0,
+            "launchType": "EC2",
+            "taskDefinition": "arn:aws:ecs:eu-west-1:059964340987:task-definition/config:4",
+            "deploymentConfiguration": {
+                "maximumPercent": 200,
+                "minimumHealthyPercent": 100
+            },
+            "deployments": [
+                {
+                    "id": "ecs-svc/9223370471494239089",
+                    "status": "PRIMARY",
+                    "taskDefinition": "arn:aws:ecs:eu-west-1:059964340987:task-definition/config:4",
+                    "desiredCount": 1,
+                    "pendingCount": 0,
+                    "runningCount": 1,
+                    "createdAt": 1565360536.71,
+                    "updatedAt": 1565370682.614,
+                    "launchType": "EC2"
+                }
+            ],
+            "roleArn": "arn:aws:iam::059964340987:role/ecsServiceRole",
+            "events": [
+                {
+                    "id": "cfc69410-8330-447b-9b9e-232d092f08bb",
+                    "createdAt": 1565360596.824,
+                    "message": "(service config) has reached a steady state."
+                },
+                {
+                    "id": "2141776c-7d93-48d8-bcca-19bdf7bbd4e9",
+                    "createdAt": 1565360579.86,
+                    "message": "(service config) registered 1 targets in (target-group arn:aws:elasticloadbalancing:eu-west-1:059964340987:targetgroup/config-tg/69582e66190b0fd4)"
+                },
+                {
+                    "id": "501b7659-af82-412f-be30-d83b2098e224",
+                    "createdAt": 1565360544.887,
+                    "message": "(service config) has started 1 tasks: (task 849a68fc-32ec-46c5-9062-cdaa6d981ce9)."
+                }
+            ],
+            "createdAt": 1565360536.71,
+            "placementConstraints": [],
+            "placementStrategy": [
+                {
+                    "type": "spread",
+                    "field": "attribute:ecs.availability-zone"
+                },
+                {
+                    "type": "spread",
+                    "field": "instanceId"
+                }
+            ],
+            "healthCheckGracePeriodSeconds": 0,
+            "schedulingStrategy": "REPLICA",
+            "enableECSManagedTags": false,
+            "propagateTags": "NONE"
+        }
+    ],
+    "failures": []
+}
